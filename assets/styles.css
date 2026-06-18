@@ -124,25 +124,23 @@ ul, ol { list-style: none; }
   box-shadow: 0 1px 0 var(--border);
 }
 
-/* Logo */
+/* Logo — two transparent PNG variants, swapped by header state */
 .hdr-logo {
   display: inline-flex; align-items: center;
-  padding: 6px 12px; border-radius: 6px;
-  transition: background 0.5s ease, box-shadow 0.4s ease;
+  padding: 4px 0;
 }
 .hdr-logo img {
-  height: 58px; width: auto; display: block;
-  transition: filter 0.4s ease;
+  height: 62px; width: auto; display: block;
 }
-/* On dark/transparent header: white chip background makes the white-bg PNG look intentional */
-.site-header.over .hdr-logo {
-  background: rgba(255,255,255,0.97);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
-}
-.site-header.over .hdr-logo img  { filter: none; }
-/* On solid white header: no wrapper bg needed, blend naturally */
-.site-header.solid .hdr-logo { background: transparent; box-shadow: none; }
-.site-header.solid .hdr-logo img { filter: none; }
+/* Dark/transparent header → show white logo, hide dark logo */
+.site-header.over  .logo-light { display: none; }
+.site-header.over  .logo-dark  { display: block; }
+/* Solid white header → show dark logo, hide white logo */
+.site-header.solid .logo-dark  { display: none; }
+.site-header.solid .logo-light { display: block; }
+/* Default (before JS sets the class) */
+.logo-dark  { display: block; }
+.logo-light { display: none; }
 
 /* Desktop Nav */
 .hdr-nav { display: flex; align-items: center; gap: 0; }
@@ -739,12 +737,12 @@ ul, ol { list-style: none; }
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 2rem;
 }
+/* Footer is always dark — use the white transparent logo directly */
 .ftr-brand-logo {
   display: inline-flex; align-items: center;
-  background: rgba(255,255,255,0.97); border-radius: 6px; padding: 6px 12px;
   margin-bottom: 1.25rem;
 }
-.ftr-brand-logo img { height: 58px; width: auto; display: block; }
+.ftr-brand-logo img { height: 62px; width: auto; display: block; }
 .ftr-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.48); line-height: 1.65; max-width: 280px; }
 .ftr-col h4 {
   font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
