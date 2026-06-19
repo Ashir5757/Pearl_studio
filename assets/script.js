@@ -44,7 +44,7 @@
 (function initHeader() {
   const hdr = document.querySelector('.site-header');
   if (!hdr) return;
-  const hasHero = !!document.querySelector('.hero');
+  const hasHero = !!document.querySelector('.hero, .page-hero');
 
   const update = () => {
     if (window.scrollY > 24) {

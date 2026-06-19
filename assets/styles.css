@@ -139,8 +139,8 @@ ul, ol { list-style: none; }
 .site-header.solid .logo-dark  { display: none; }
 .site-header.solid .logo-light { display: block; }
 /* Default (before JS sets the class) */
-.logo-dark  { display: block; }
-.logo-light { display: none; }
+.hdr-logo .logo-dark  { display: block; }
+.hdr-logo .logo-light { display: none; }
 
 /* Desktop Nav */
 .hdr-nav { display: flex; align-items: center; gap: 0; }
@@ -984,4 +984,3 @@ ul, ol { list-style: none; }
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 .story-body { display: flex; flex-direction: column; }
-
